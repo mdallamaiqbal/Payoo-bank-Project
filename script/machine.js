@@ -21,12 +21,18 @@ function setBalance(value){
 function showOnly(id){
     const addMoney=document.getElementById('add-money');
     const cashOut=document.getElementById('CashOut');
+    const transaction=document.getElementById('history');
 
     //all hide
     addMoney.classList.add('hidden');
     cashOut.classList.add('hidden');
+    transaction.classList.add('hidden')
 
     //show id element
     const selected=document.getElementById(id);
     selected.classList.remove('hidden')
+}
+//machine -> clear id
+function clearInput(id){
+  document.getElementById(id).value = '';
 }

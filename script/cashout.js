@@ -18,7 +18,21 @@ document.getElementById('cashOut-btn').addEventListener('click',function(){
      const pin =getValueFromInput('cashOut-pin');
      if(pin ==='1234'){
         alert('CashOut successful');
-       setBalance(newBalance)
+       setBalance(newBalance);
+        //1- history-container catch
+        const history=document.getElementById('history-container');
+        //2-new div create
+        const newHistory=document.createElement('div');
+        //3- new div innerHTML add
+        newHistory.innerHTML=`
+        <div class="transaction-card p-5 bg-base-100">
+        Cashout ${cashOutAmount} TAKA success to ${cashOutNumber} , at ${new Date()}
+        </div>
+        `
+        //4-history container  newDiv append
+        history.append(newHistory);
+        clearInput('CashOut-amount');
+        clearInput('cashOut-pin');
      }else{
         alert('Invalid Pin');
         return
