@@ -10,13 +10,9 @@ document.getElementById('login-btn').addEventListener('click',function(){
     //step-4: match 2-3;
     alert('LogIN successful');
     window.location.assign('./home.html');
-    inputNumber.value='';
-    inputPin.value='';
    }else{
     //step-5:return;
       alert('LogIN failed');
-      inputNumber.value='';
-      inputPin.value='';
       return
    }
 })
